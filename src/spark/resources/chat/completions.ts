@@ -89,8 +89,6 @@ export class Completions extends APIResource {
     if (params.stream) {
       const readableStream = new ReadableStream({
         pull(ctrl) {
-          const fluxr = new Textfluxr();
-
           ws.onmessage = event => {
             const data: ChatCompletions.ChatCompletionResponse = JSON.parse(event.data);
 
@@ -130,7 +128,7 @@ export class Completions extends APIResource {
               created: Date.now() / 1000,
             };
 
-            ctrl.enqueue(fluxr.flux(JSON.stringify(completion) + '\n'));
+            ctrl.enqueue(JSON.stringify(completion) + '\n');
           };
           ws.onerror = error => {
             ctrl.error(error);
@@ -167,6 +165,7 @@ export class Completions extends APIResource {
           message: {
             role: 'assistant',
             content: message.content,
+            refusal:null
           },
           logprobs: null,
           finish_reason: 'stop',

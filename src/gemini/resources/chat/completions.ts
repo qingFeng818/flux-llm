@@ -82,7 +82,7 @@ export class Completions extends APIResource {
       contents: messages.map(item => {
         return {
           role: formatRole(item.role),
-          parts: formatContentParts(item.content!),
+          parts: formatContentParts(item.content! as any),
         };
       }),
       generationConfig,
@@ -121,6 +121,7 @@ export class Completions extends APIResource {
         message: {
           role: 'assistant',
           content: part.text!,
+          refusal: null,
         },
         logprobs: null,
         finish_reason: 'stop',

@@ -89,7 +89,7 @@ export class Completions extends APIResource {
     };
 
     if (system) {
-      data.system = system;
+      data.system = system as any;
     }
 
     if (user) {
@@ -117,6 +117,7 @@ export class Completions extends APIResource {
       message: {
         role: 'assistant',
         content: result.result,
+        refusal: null,
       },
       logprobs: null,
       finish_reason: 'stop',

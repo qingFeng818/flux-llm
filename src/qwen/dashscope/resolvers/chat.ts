@@ -102,6 +102,7 @@ export function toChatCompletion(
     message: {
       role: 'assistant',
       content: '',
+      refusal: null,
     },
     logprobs: null,
     finish_reason: 'stop',
@@ -114,7 +115,8 @@ export function toChatCompletion(
     choice.message = {
       role: message.role,
       content: message.content,
-    };
+      refusal: null,
+    } ;
 
     if (finish_reason === 'tool_calls') {
       choice.finish_reason = 'tool_calls';

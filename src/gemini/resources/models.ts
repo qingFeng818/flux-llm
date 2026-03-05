@@ -66,6 +66,6 @@ interface GeminiPageResponse {
 export type Model = OpenAI.Models.Model;
 
 export namespace Models {
-  export import Model = OpenAI.Models.Model;
-  export import ModelsPage = OpenAI.Models.ModelsPage;
+  export type Model = OpenAI.Models.Model;
+  export type ModelsPage = OpenAI.Models.ModelsPage;
 }

@@ -97,7 +97,7 @@ export class Completions extends APIResource {
       data.bot_setting = [
         {
           bot_name: 'MM智能助理',
-          content: system || this.system,
+          content: system || this.system as any,
         },
       ];
       data.reply_constraints = {
@@ -109,7 +109,7 @@ export class Completions extends APIResource {
         bot_name: 'MM智能助理',
         user_name: '用户',
       };
-      data.prompt = system || this.system;
+      data.prompt = system || this.system as any
     }
 
     data.messages = messages.map(item => {
@@ -156,6 +156,7 @@ export class Completions extends APIResource {
             message: {
               role: 'assistant',
               content: choice.messages[0].text,
+              refusal: null,
             },
             logprobs: null,
             finish_reason,
@@ -167,11 +168,12 @@ export class Completions extends APIResource {
           message: {
             role: 'assistant',
             content: choice.text,
+            refusal: null,
           },
           logprobs: null,
           finish_reason,
         };
-      }),
+      }) as any,
       created: data.created,
       object: 'chat.completion',
       usage: data.usage,

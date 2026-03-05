@@ -112,6 +112,7 @@ export class Completions extends APIResource {
       message: {
         role: 'assistant',
         content: message.messages.content,
+        refusal: null,
       },
       logprobs: null,
       finish_reason: message.finish_reason,
