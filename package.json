@@ -48,6 +48,7 @@
     }
   },
   "files": [
+    "doc",
     "dist",
     "dist-types"
   ],
