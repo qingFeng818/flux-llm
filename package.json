@@ -70,7 +70,8 @@
     "prepublishOnly": "pnpm build && node -e \"const fs = require('fs'); const path = require('path'); const packagePath = path.join(__dirname, 'package'); if (fs.existsSync(packagePath)) { fs.rmSync(packagePath, { recursive: true, force: true }); }\" && clean-publish",
     "postpublish": "node scripts/del.js",
     "pub": "bumpp && npm publish",
-    "fix": "eslint --fix src samples vite.config.mts doc README.md"
+    "fix": "eslint --fix src samples vite.config.mts doc README.md",
+    "test:ernie": "esno samples/ernie/chat.ts"
   },
   "engines": {
     "node": ">=18.0.0"
@@ -95,9 +96,11 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-tsdoc": "^0.2.17",
+    "flux-llm-sdk": "^0.0.7",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.4",
     "prettier": "^3.2.5",
+    "terser": "^5.46.0",
     "typescript": "~5.4.5",
     "vite": "^5.2.11",
     "vite-plugin-checker": "^0.6.4",

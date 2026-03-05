@@ -1,4 +1,5 @@
-import { ErnieAI } from '../../src';
+// import { ErnieAI } from '../../src';
+import { ErnieAI } from '../../dist/index.mjs';
 
 const ernie = new ErnieAI();
 

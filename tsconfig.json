@@ -15,6 +15,12 @@
     "skipLibCheck": true,
     "rootDir": "src"
   },
+  "resolve": {
+    "extensions": [".mjs", ".cjs", ".js", ".json", ".ts", ".tsx"],
+    "alias": {
+      "@/dist": "./dist"
+    }
+  },
   "include": ["src"],
   "exclude": ["node_modules"],
   "references": [
