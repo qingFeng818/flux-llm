@@ -12,10 +12,10 @@
     "minimax"
   ],
   "author": "qingfeng818",
-  "homepage": "https://github.com/flux-studio-fe/flux-llm-sdk#readme",
+  "homepage": "https://github.com/qingfeng818/flux-llm#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/flux-studio-fe/flux-llm-sdk"
+    "url": "https://github.com/qingfeng818/flux-llm"
   },
   "license": "MIT",
   "type": "commonjs",
