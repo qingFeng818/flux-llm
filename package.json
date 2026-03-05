@@ -1,6 +1,6 @@
 {
   "name": "flux-llm-sdk",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "大模型SDK",
   "keywords": [
     "flux",
@@ -66,8 +66,8 @@
     "inspect": "esno --no-warnings --inspect -r dotenv/config",
     "build": "vite build",
     "fmt": "prettier src samples vite.config.mts doc README.md --log-level warn",
-    "prepublishOnly": "pnpm build && rm -rf ./package && clean-publish",
-    "postpublish": "rm -rf ./package",
+    "prepublishOnly": "pnpm build && node -e \"const fs = require('fs'); const path = require('path'); const packagePath = path.join(__dirname, 'package'); if (fs.existsSync(packagePath)) { fs.rmSync(packagePath, { recursive: true, force: true }); }\" && clean-publish",
+    "postpublish": "node scripts/del.js",
     "pub": "bumpp && npm publish",
     "fix": "eslint --fix src samples vite.config.mts doc README.md"
   },
