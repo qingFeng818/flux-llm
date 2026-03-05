@@ -1,6 +1,6 @@
 {
   "name": "flux-llm-sdk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "大模型SDK",
   "keywords": [
     "flux",
