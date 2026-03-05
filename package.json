@@ -67,7 +67,8 @@
     "build": "vite build",
     "fmt": "prettier src samples vite.config.mts doc README.md --log-level warn",
     "prepublishOnly": "pnpm build && rm -rf ./package && clean-publish",
-    "postpublish": "rm -rf ./package"
+    "postpublish": "rm -rf ./package",
+    "pub": "bumpp && npm publish"
   },
   "engines": {
     "node": ">=18.0.0"
@@ -83,6 +84,7 @@
     "@types/ws": "^8.5.10",
     "@typescript-eslint/eslint-plugin": "^7.10.0",
     "@typescript-eslint/parser": "^7.10.0",
+    "bumpp": "^10.4.1",
     "clean-publish": "^5.0.0",
     "dotenv": "^16.4.5",
     "eslint": "^9.3.0",
